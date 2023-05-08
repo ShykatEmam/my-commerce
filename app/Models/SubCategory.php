@@ -18,4 +18,19 @@ class SubCategory extends Model
         self::$sub->status = $request->status;
         self::$sub->save();
     }
+    public static function subStatus($id){
+        self::$sub = SubCategory::find($id);
+        if (self::$sub->status ==1){
+            self::$sub->status = 2;
+        }
+        else{
+            self::$sub->status = 1;
+        }
+        self::$sub->save();
+    }
+
+    public static function deleteSubCategory($id){
+        self::$sub = SubCategory::find($id);
+        self::$sub->delete();
+    }
 }

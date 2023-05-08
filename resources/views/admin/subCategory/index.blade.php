@@ -14,7 +14,7 @@
                         @csrf
                         <div class="form-group row">
                             <label for="exampleInputuname3" class="col-sm-3 control-label">
-                                Category Name <span class="text-danger">*</span>
+                                Parent Category Name <span class="text-danger">*</span>
                             </label>
                             <div class="col-sm-9">
                                 <select class="select2 form-control form-select" name="category_id">

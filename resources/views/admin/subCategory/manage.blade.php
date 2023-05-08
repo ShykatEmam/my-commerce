@@ -15,9 +15,9 @@
                         <thead>
                         <tr>
                             <th>SL NO</th>
-                            <th>Category Name</th>
-                            <th>Category Description</th>
-                            <th>Category Image</th>
+                            <th>SubCategory Name</th>
+                            <th>SubCategory Description</th>
+                            <th>Parent Category Name</th>
                             <th>Publication Status</th>
                             <th>Action</th>
                         </tr>
@@ -26,34 +26,32 @@
                         $i=1;
                         ?>
                         <tbody>
-{{--                        @foreach()--}}
+                        @foreach($subCategories as $sub)
                             <tr>
                                 <td>{{$i++}}</td>
-                                <td></td>
-                                <td></td>
-{{--                                <td>--}}
-{{--                                    <img src="{{asset($category->image)}}" class="img-fluid" alt="Category image" width="100px">--}}
-{{--                                </td>--}}
-{{--                                <td>--}}
-{{--                                    @if($category->status ==1)--}}
-{{--                                        <a href="{{route('status',['id'=>$category->id])}}" class="btn btn-success btn-sm">Published</a>--}}
-{{--                                    @else--}}
+                                <td>{{$sub->name}}</td>
+                                <td>{{$sub->description}}</td>
+                                <td>{{$sub->category_name}}</td>
+                                <td>
+                                    @if($sub->status ==1)
+                                        <a href="{{route('sub.status',['id'=>$sub->id])}}" class="btn btn-success btn-sm">Published</a>
+                                    @else
 
-{{--                                        <a href="{{route('status',['id'=>$category->id])}}" class="btn btn-warning btn-sm">Unpublished</a>--}}
-{{--                                    @endif--}}
-{{--                                </td>--}}
-{{--                                <td>--}}
-{{--                                    <a href="{{route('edit.category',['id'=>$category->id])}}" class="btn btn-success btn-sm">--}}
-{{--                                        <i class="ti ti-pencil"></i>--}}
-{{--                                    </a>--}}
+                                        <a href="{{route('sub.status',['id'=>$sub->id])}}" class="btn btn-warning btn-sm">Unpublished</a>
+                                    @endif
+                                </td>
+                                <td>
+                                    <a href="" class="btn btn-success btn-sm">
+                                        <i class="ti ti-pencil"></i>
+                                    </a>
 
-{{--                                    <a href="{{route('delete.category',['id'=>$category->id])}}" class="btn btn-danger btn-sm"  onclick="return confirm('Are you sure you want to delete this item?');">--}}
-{{--                                        <i class="ti ti-trash"></i>--}}
-{{--                                    </a>--}}
-{{--                                </td>--}}
+                                    <a href="{{route('delete.subcategory',['id'=>$sub->id])}}" class="btn btn-danger btn-sm"  onclick="return confirm('Are you sure you want to delete this item?');">
+                                        <i class="ti ti-trash"></i>
+                                    </a>
+                                </td>
                             </tr>
 
-{{--                        @endforeach--}}
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
