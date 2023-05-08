@@ -33,4 +33,13 @@ class SubCategory extends Model
         self::$sub = SubCategory::find($id);
         self::$sub->delete();
     }
+    public static function updateSubCategory($request){
+        self::$sub = SubCategory::find($request->id);
+        self::$sub->category_id = $request->category_id;
+        self::$sub->name = $request->name;
+        self::$sub->description = $request->description;
+        self::$sub->status = $request->status;
+        self::$sub->save();
+
+    }
 }

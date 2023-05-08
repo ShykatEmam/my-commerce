@@ -26,7 +26,9 @@ class SubCategoryController extends Controller
 
     }
     public function saveSubCategory(Request $request){
-        SubCategory::saveSubCategory($request);
+        if ($request->category_id!=null && $request->name !=null && $request->description != null){
+            SubCategory::saveSubCategory($request);
+        }
         return back();
     }
     public function status($id){
@@ -39,8 +41,18 @@ class SubCategoryController extends Controller
 
     }
     public function editSubCategory($id){
+        $this->sub= SubCategory::find($id);
+        return view('admin.subCategory.edit',[
+            'categories'=>Category::all(),
+            'sub'=>$this->sub,
+        ]);
+    }
+    public function updateSubCategory(Request $request){
 
-        return view('admin.subCategory.edit');
+        if ($request->category_id!=null && $request->name !=null && $request->description != null){
+            SubCategory::updateSubCategory($request);
 
+        }
+        return redirect(route('manage.subcategory'));
     }
 }

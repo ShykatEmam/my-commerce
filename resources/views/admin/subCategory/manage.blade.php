@@ -41,7 +41,7 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="" class="btn btn-success btn-sm">
+                                    <a href="{{route('edit.subcategory',['id'=>$sub->id])}}" class="btn btn-success btn-sm">
                                         <i class="ti ti-pencil"></i>
                                     </a>
 

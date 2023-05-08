@@ -49,6 +49,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/edit-sub-category/{id}',[SubCategoryController::class,'editSubCategory'])->name('edit.subcategory');
 
     Route::post('new-sub-category',[SubCategoryController::class,'saveSubCategory'])->name('new.subcategory');
+    Route::post('/update-sub-category',[SubCategoryController::class,'updateSubCategory'])->name('update.subcategory');
 
 
 });
