@@ -38,8 +38,8 @@
                         <span class="hide-menu">Brand Module</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="ui-cards.html">Add Brand</a></li>
-                        <li><a href="ui-user-card.html">Manage Brand</a></li>
+                        <li><a href="#">Add Brand</a></li>
+                        <li><a href="#">Manage Brand</a></li>
                     </ul>
                 </li>
                 <li>
@@ -48,8 +48,8 @@
                         <span class="hide-menu">Unit Module</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="ui-cards.html">Add Unit</a></li>
-                        <li><a href="ui-user-card.html">Manage Unit</a></li>
+                        <li><a href="#">Add Unit</a></li>
+                        <li><a href="#">Manage Unit</a></li>
                     </ul>
                 </li>
                 <li>
@@ -58,8 +58,8 @@
                         <span class="hide-menu">Product Module</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="ui-cards.html">Add Product</a></li>
-                        <li><a href="ui-user-card.html">Manage Product</a></li>
+                        <li><a href="#">Add Product</a></li>
+                        <li><a href="#">Manage Product</a></li>
                     </ul>
                 </li>
                 <li>

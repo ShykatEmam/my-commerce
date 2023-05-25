@@ -18,7 +18,7 @@
                             </label>
                             <div class="col-sm-9">
                                 <select class="select2 form-control form-select" name="category_id">
-                                    <option>Select</option>
+                                    <option>--- Select Category ---</option>
                                     @foreach($categories as $category)
                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                     @endforeach

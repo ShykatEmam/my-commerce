@@ -31,21 +31,19 @@ class CategoryController extends Controller
 
 
 
-
     public function saveCategory(Request $request){
         if ($request->name !=null && $request->description !=null){
             Category::saveCategory($request);
         }
 
-
-        return back();
+        return back()->with('message','Category info created successfully.!!');
     }
     public function updateCategory(Request $request){
 
 //        return $request;
         Category::updateCategory($request);
 
-        return redirect(route('category.manage'));
+        return redirect(route('category.manage'))->with('message','Category updated successfully !!!');
     }
     public function status($id){
         Category::status($id);

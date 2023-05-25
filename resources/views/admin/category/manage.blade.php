@@ -11,6 +11,7 @@
                 <h4 class="card-title">Data Table</h4>
                 <h6 class="card-subtitle">Data table example</h6>
                 <div class="table-responsive m-t-40">
+                    <p class="text-center text-success">{{Session::get('message')}}</p>
                     <table id="myTable" class="table table-striped border">
                         <thead>
                         <tr>
