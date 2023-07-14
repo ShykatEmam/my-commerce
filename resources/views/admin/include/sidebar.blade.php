@@ -34,7 +34,7 @@
                 </li>
                 <li>
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                        <i class="ti-palette"></i>
+                        <i class="ti-email"></i>
                         <span class="hide-menu">Brand Module</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
@@ -44,7 +44,7 @@
                 </li>
                 <li>
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                        <i class="ti-palette"></i>
+                        <i class="ti-email"></i>
                         <span class="hide-menu">Unit Module</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
