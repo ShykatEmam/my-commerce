@@ -35,6 +35,12 @@ class CategoryController extends Controller
         if ($request->name !=null && $request->description !=null){
             Category::saveCategory($request);
         }
+//        DB::table('categories')->insert([
+//            'name'          => $request->name,
+//            'description'   => $request->description,
+//            'image'         => $request->image,
+//            'status'        => $request->status,
+//        ]);
 
         return back()->with('message','Category info created successfully.!!');
     }
