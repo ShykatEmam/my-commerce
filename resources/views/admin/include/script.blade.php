@@ -82,6 +82,7 @@
 {{--<script src="../../../../cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>--}}
 {{--<script src="../../../../cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>--}}
 <!-- end - This is for export functionality only -->
+
 <script>
     $(function () {
         $('#myTable').DataTable();
@@ -132,4 +133,59 @@
         $('.buttons-copy, .buttons-csv, .buttons-print, .buttons-pdf, .buttons-excel').addClass('btn btn-primary me-1');
     });
 
+</script>
+
+
+
+{{--summernote js plugin--}}
+<script src="{{asset('/')}}admin/assets/node_modules/summernote/dist/summernote-bs4.min.js"></script>
+<script>
+    $(function() {
+
+        $('.summernote').summernote({
+            height: 350, // set editor height
+            minHeight: null, // set minimum height of editor
+            maxHeight: null, // set maximum height of editor
+            focus: false // set focus to editable area after initializing summernote
+        });
+
+        $('.inline-editor').summernote({
+            airMode: true
+        });
+
+    });
+
+    window.edit = function() {
+        $(".click2edit").summernote()
+    },
+        window.save = function() {
+            $(".click2edit").summernote('destroy');
+        }
+</script>
+
+{{--summernote js plugin end--}}
+
+<script>
+    $(function () {
+        $(document).on('change','#categoryId',function () {
+            var categoryId = $(this).val();
+            $.ajax({
+                type: "GET",
+                url: "{{route('product.get-subcategory-by-category')}}",
+                data: {id:categoryId},
+                dataType: "JSON",
+                success: function (response) {
+                    var option = '';
+                    option += '<option value="" disabled selected>--- Select Sub Category ---</option>';
+                    $.each(response, function (key, value) {
+                        option += '<option value="'+value.id+'" disabled selected>'+value.name+'</option>';
+                    });
+                    var subCategoryId = $('#subCategoryId');
+                    subCategoryId.empty();
+                    subCategoryId.append(option);
+
+                }
+            });
+        });
+    })
 </script>

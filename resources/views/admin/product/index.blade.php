@@ -10,15 +10,15 @@
                 <div class="card-body">
                     <h4 class="card-title">Add Product Form</h4>
                     <hr>
-                    <form class="form-horizontal p-t-20" action="{{route('new.subcategory')}}" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal p-t-20" action="{{route('product.new')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
                             <label for="exampleInputuname3" class="col-sm-3 control-label">
                                 Parent Category Name <span class="text-danger">*</span>
                             </label>
                             <div class="col-sm-9">
-                                <select class="select2 form-control form-select" name="category_id">
-                                    <option>--- Select Category ---</option>
+                                <select class="select2 form-control form-select" name="category_id" id="categoryId">
+                                    <option value="" disabled selected>--- Select Category ---</option>
                                     @foreach($categories as $category)
                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                     @endforeach
@@ -30,8 +30,8 @@
                                 Sub Category Name <span class="text-danger">*</span>
                             </label>
                             <div class="col-sm-9">
-                                <select class="select2 form-control form-select" name="sub_category_id">
-                                    <option>--- Select Sub Category ---</option>
+                                <select class="select2 form-control form-select" name="sub_category_id" id="subCategoryId">
+                                    <option value="" disabled selected>--- Select Sub Category ---</option>
                                     @foreach($sub_categories as $sub_category)
                                         <option value="{{$sub_category->id}}">{{$sub_category->name}}</option>
                                     @endforeach
@@ -44,7 +44,7 @@
                             </label>
                             <div class="col-sm-9">
                                 <select class="select2 form-control form-select" name="brand_id">
-                                    <option>--- Select Brand ---</option>
+                                    <option value="" disabled selected>--- Select Brand ---</option>
                                     @foreach($brands as $brand)
                                         <option value="{{$brand->id}}">{{$brand->name}}</option>
                                     @endforeach
@@ -57,7 +57,7 @@
                             </label>
                             <div class="col-sm-9">
                                 <select class="select2 form-control form-select" name="unit_id">
-                                    <option>--- Select Unit ---</option>
+                                    <option value="" disabled selected>--- Select Unit ---</option>
                                     @foreach($units as $unit)
                                         <option value="{{$unit->id}}">{{$unit->name}}</option>
                                     @endforeach
@@ -100,10 +100,14 @@
 
                         <div class="form-group row">
                             <label for="" class="col-sm-3 control-label">
-                                Regular Price <span class="text-danger">*</span>
+                                Product Price <span class="text-danger">*</span>
                             </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="" name="regular_price" placeholder="Regular Price">
+                                <div class="input-group">
+
+                                    <input type="number" class="form-control" id="" name="regular_price" placeholder="Regular Price">
+                                    <input type="number" class="form-control" id="" name="selling_price" placeholder="Selling Price">
+                                </div>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -111,7 +115,6 @@
                                 Selling Price <span class="text-danger">*</span>
                             </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="" name="selling_price" placeholder="Selling Price">
                             </div>
                         </div>
 
@@ -127,20 +130,20 @@
                             <label for="exampleInputEmail34" class="col-sm-3 control-label">
                                 Long Description <span class="text-danger">*</span></label>
                             <div class="col-sm-9">
-                                <textarea class="form-control" name="long_description" id="exampleInputEmail34" placeholder="Long Description"></textarea>
+                                <textarea class="form-control summernote" name="long_description" id="exampleInputEmail34" placeholder="Long Description"></textarea>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label class="form-label col-sm-3 control-label" for="web"> Feature Image</label>
                             <div class="col-sm-9">
-                                <input type="file" name="image" class="dropify" >
+                                <input type="file" name="image" class="dropify" accept="image/*">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="form-label col-sm-3 control-label" for="web"> Other Image</label>
                             <div class="col-sm-9">
-                                <input type="file" name="other_image" class="dropify" >
+                                <input type="file" name="other_image" multiple class="dropify" accept="image/*">
                             </div>
                         </div>
                         <div class="form-group row">

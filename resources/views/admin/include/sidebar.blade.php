@@ -58,8 +58,8 @@
                         <span class="hide-menu">Product Module</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="#">Add Product</a></li>
-                        <li><a href="#">Manage Product</a></li>
+                        <li><a href="{{route('product.add')}}">Add Product</a></li>
+                        <li><a href="{{route('product.manage')}}">Manage Product</a></li>
                     </ul>
                 </li>
                 <li>

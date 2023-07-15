@@ -10,6 +10,7 @@ Use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\UnitController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -64,7 +65,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::post('/brand/update',[BrandController::class,'updateBrand'])->name('update.brand');
 
 
-//    Unit ROutes
+//    Unit routes
     Route::get('/unit/add',[UnitController::class,'index'])->name('unit.add');
     Route::get('/unit/manage',[UnitController::class,'manage'])->name('unit.manage');
     Route::get('/unit/status/{id}',[UnitController::class,'status'])->name('unit.status');
@@ -73,5 +74,16 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::post('/unit/new',[UnitController::class,'saveUnit'])->name('new.unit');
     Route::post('/unit/update',[UnitController::class,'updateUnit'])->name('update.unit');
+
+//    Product routes
+    Route::get('/product/add',[ProductController::class,'index'])->name('product.add');
+    Route::get('/product/get-subcategory-by-category',[ProductController::class,'getSubCategoryByCategory'])->name('product.get-subcategory-by-category');
+    Route::get('/product/manage',[ProductController::class,'manage'])->name('product.manage');
+    Route::get('/product/status/{id}',[ProductController::class,'status'])->name('product.status');
+    Route::get('/product/delete/{id}',[ProductController::class,'delete'])->name('product.delete');
+    Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
+
+    Route::post('/product/new',[ProductController::class,'save'])->name('product.new');
+    Route::post('/product/update',[ProductController::class,'update'])->name('product.update');
 
 });

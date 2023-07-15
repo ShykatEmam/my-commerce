@@ -9,6 +9,17 @@
 <link href="{{asset('/')}}admin/dist/css/pages/dashboard1.css" rel="stylesheet">
 
 <link rel="stylesheet" href="{{asset('/')}}admin/assets/node_modules/dropify/dist/css/dropify.min.css">
+
+
+{{--summernote css--}}
+
+<link rel="stylesheet" href="{{asset('/')}}admin/assets/node_modules/summernote/dist/summernote-bs4.css">
+
+
+
+
+
+
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 {{--    <!--[if lt IE 9]>--}}
