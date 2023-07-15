@@ -10,7 +10,6 @@ Use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\UnitController;
-use Pro
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -74,4 +73,5 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::post('/unit/new',[UnitController::class,'saveUnit'])->name('new.unit');
     Route::post('/unit/update',[UnitController::class,'updateUnit'])->name('update.unit');
+
 });
