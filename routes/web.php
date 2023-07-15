@@ -10,6 +10,7 @@ Use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\UnitController;
+use Pro
 /*
 |--------------------------------------------------------------------------
 | Web Routes
