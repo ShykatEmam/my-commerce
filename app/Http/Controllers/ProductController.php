@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Product;
 use App\Models\SubCategory;
 use App\Models\Unit;
 use Illuminate\Http\Request;
@@ -24,7 +25,8 @@ class ProductController extends Controller
 
         return response()->json(SubCategory::where('category_id',$_GET['id'])->get());
     }
-    public $product;
+
+    private $product;
     public function manage(){
         $this->product = Product::all();
         return view('admin.product.manage',[
@@ -36,16 +38,13 @@ class ProductController extends Controller
             'product'=>Product::find($id),
         ]);
     }
-    public function save(Request $request){
+    public function create(Request $request){
+
+        return $request;
         if ($request->name !=null && $request->description !=null){
-            Product::save($request);
+            $this->product = Product::newProduct($request);
+            
         }
-//        DB::table('categories')->insert([
-//            'name'          => $request->name,
-//            'description'   => $request->description,
-//            'image'         => $request->image,
-//            'status'        => $request->status,
-//        ]);
 
         return back()->with('message','Product info created successfully.!!');
     }

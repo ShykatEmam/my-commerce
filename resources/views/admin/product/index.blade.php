@@ -31,7 +31,7 @@
                             </label>
                             <div class="col-sm-9">
                                 <select class="select2 form-control form-select" name="sub_category_id" id="subCategoryId">
-                                    <option value="" disabled selected>--- Select Sub Category ---</option>
+                                    <option value="" selected>--- Select Sub Category ---</option>
                                     @foreach($sub_categories as $sub_category)
                                         <option value="{{$sub_category->id}}">{{$sub_category->name}}</option>
                                     @endforeach
@@ -111,15 +111,6 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="" class="col-sm-3 control-label">
-                                Selling Price <span class="text-danger">*</span>
-                            </label>
-                            <div class="col-sm-9">
-                            </div>
-                        </div>
-
-
-                        <div class="form-group row">
                             <label for="exampleInputEmail33" class="col-sm-3 control-label">
                                 Short Description <span class="text-danger">*</span></label>
                             <div class="col-sm-9">
@@ -143,7 +134,7 @@
                         <div class="form-group row">
                             <label class="form-label col-sm-3 control-label" for="web"> Other Image</label>
                             <div class="col-sm-9">
-                                <input type="file" name="other_image" multiple class="dropify" accept="image/*">
+                                <input type="file" name="other_image[]" multiple class="dropify" accept="image/*">
                             </div>
                         </div>
                         <div class="form-group row">
